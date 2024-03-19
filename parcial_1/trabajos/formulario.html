@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Primer Contacto Tutorías</title>
+        <style>
+            li{
+                padding-bottom: 15px;
+                font-size: 16px;
+            }
+            h1{
+                font-size: 32px;
+            }
+            h2{
+                font-size: 28px;
+            }
+            h3{
+                font-size: 24px;
+            }
+            h4{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Formulario de Primer Contacto de Tutorías</h1>
+        <h2>Debe ser llenado por el tutelado</h3>
+        <form action="mailto:liliana.gamez@upslp.edu.mx" method="post">
+            <ol>
+                <li>NOMBRE: <input type="text" name="nombre" size="80"></li>
+                <li>MATRICULA: <input type="number" name="matricula" minlength="180000"></li>
+                <li>SEMESTRE: <br>
+                    <input type="radio" name="s1" value="1"> 1
+                    <input type="radio" name="s2" value="2"> 2
+                    <input type="radio" name="s3" value="3"> 3
+                    <input type="radio" name="s4" value="4"> 4
+                    <input type="radio" name="s5" value="5"> 5
+                    <input type="radio" name="s6" value="6"> 6
+                    <input type="radio" name="s7" value="7"> 7
+                    <input type="radio" name="s8" value="8"> 8
+                    <input type="radio" name="s9" value="9"> 9
+                    <input type="radio" name="s9p" value="10"> 9+
+                </li>
+                <li>FECHA: <input type="date" name="fecha"></li>
+            
+            <h4>Materias cursadas en el semestre anterior</h3>
+            
+                <li>MATERIA 1: <input type="text" name="materia1" size="50"></li>
+                <li>MATERIA 2: <input type="text" name="materia2" size="50"></li>
+                <li>MATERIA 3: <input type="text" name="materia3" size="50"></li>
+                <li>MATERIA 4: <input type="text" name="materia4" size="50"></li>
+                <li>MATERIA 5: <input type="text" name="materia5" size="50"></li>
+                <li>MATERIA 6: <input type="text" name="materia6" size="50"></li>
+            
+            <h4>Calificaciones de las materias cursadas en el semestre anterior</h3>
+            
+                <li>CALIFICACIÓN FINAL MATERIA 1: <input type="number" name="cal1" step="any" min="0" max="10"></li>
+                <li>CALIFICACIÓN FINAL MATERIA 2: <input type="number" name="cal2" step="any" min="0" max="10"></li>
+                <li>CALIFICACIÓN FINAL MATERIA 3: <input type="number" name="cal3" step="any" min="0" max="10"></li>
+                <li>CALIFICACIÓN FINAL MATERIA 4: <input type="number" name="cal4" step="any" min="0" max="10"></li>
+                <li>CALIFICACIÓN FINAL MATERIA 5: <input type="number" name="cal5" step="any" min="0" max="10"></li>
+                <li>CALIFICACIÓN FINAL MATERIA 6: <input type="number" name="cal6" step="any" min="0" max="10"></li>
+                <br>
+                <li>CUAL FUE EL MOTIVO POR EL QUE REPROBASTE LAS MATERIAS (SI APLICA)</li>
+                <textarea name="motivo" cols="70" rows="8" placeholder="Escribe aquí tu comentario"></textarea>
+                <li>COMO CONSIDERAS TU RENDIMIENTO EN GENERAL:</li>
+                <p>
+                    <select name="rendimiento">
+                        <option></option>
+                        <option value="1">Malo</option>
+                        <option value="2">Regular</option>
+                        <option value="3">Bueno</option>
+                        <option value="4">Excelente</option>
+                    </select>
+                </p>
+            </ol>
+            <button type="submit" value="Enviar">Enviar</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Sol</title>
+        <style>
+            body{
+                background-image: url(planetas/fondo.png);
+                color: white;
+            }
+            h1{
+                font-size: 50px;
+                border-radius: 30px;
+                text-align: center;
+                background-color: gray;
+            }
+            .texto{
+                display: flex;
+                flex-basis: fill;
+                align-items: center;
+            }
+            .up{
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+            .hm{
+                width: 5%;
+            }
+            .titl{
+                width: 100%;
+            }       
+        </style>
+    </head>
+    <body>
+        <div class="up">
+            <div class="hm"><a href="sistemasolar.html"><img src="planetas/home.png" alt="Home Page" style="width: 100%;"></a></div>
+            <div class="titl"><h1>Sol</h1></div>
+        </div>  
+        
+        <div class="texto">
+            <div><img src="planetas/sol.png" alt="Sol" usemap="#solmp"></div>
+            <div style="font-size: 30px;">
+                El Sol es una estrella de tipo espectral G2 y luminosidad V, 
+                es decir, una estrella G2V. Esta no es otra cosa que la forma 
+                rápida y abreviada que tienen los astrónomos para referirse a 
+                las estrellas enanas amarillas que poseen entre 0,8 y 1,2 masas 
+                solares. Tiene una edad aproximada de 4.500 millones de años y 
+                se encuentra a unos 150 millones de kilómetros de nuestro planeta.
+                <br> <br>
+                El Sol está ubicado uno de los brazos espirales secundarios de la 
+                Vía Láctea, el brazo de Sagitario, en un espolón conocido como brazo de Orión.
+                La estrella gira sobre su eje con una inclinación de 7,25º con respecto a su 
+                orbita alrededor del Sol, sobre la que se desplaza a una velocidad de 720.000
+                kilómetros por hora.
+            </div>
+            <div style="flex-basis: unset;">
+                
+            </div>
+        </div>
+        <map name="solmp">
+            <area shape="circle" coords="250,250,200" href="sistemasolar.html" alt="Sol">
+        </map> 
+    </body>
+</html>

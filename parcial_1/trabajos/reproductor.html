@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reproductor de Video</title>
+        <style>
+            body{
+                background-color: #e7ffd0;
+                text-align: center;
+                font-family: Calibri,sans-serif;
+            }
+            h1 {
+                font-size: 52px;
+                background-color: #99bb80;
+                border-radius: 10px;
+            }
+            div{
+                display: flex;
+                flex-basis: content;
+                padding: 5px;
+            }
+            video{
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="reproductor">
+            <h1>Reproductor</h1>
+            <iframe src="../videos/video1.mp4" name="iframe_a" height="500px" width="100%" title="Contenido"></iframe>
+            <div>
+                <div><video src="../videos/video1.mp4" controls></video></div>
+                <div><video src="../videos/video2.mp4" controls></video></div>
+                <div><video src="../videos/video3.mp4" controls></video></div>
+            </div>
+            
+        </section>
+    </body>
+</html>
