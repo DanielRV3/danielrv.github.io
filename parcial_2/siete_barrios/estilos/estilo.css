@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 226, 176, 0.65);
+  background-image: url("../media/fondo.jpg");
+  background-blend-mode: hue;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+header{
+  display: flex;
+  margin: 0;
+  height: 25vh;
+  background-color: rgba(105,161,103,0.63);
+  justify-content: right;
+}
+
+
+h1 {
+  color: whitesmoke;
+  text-shadow: 5px 5px 7px black;
+  font-weight: 900;
+  letter-spacing: 15px;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 52px;
+  width: 40%;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  clear: both;
+  background-color: rgba(17,110,36,0.63);
+  color: white;
+}
+
+p.centrado {
+  padding: 15px;
+  text-align: justify;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: Ginebra,sans-serif;
+}
+
+.container{
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+}
+
+img.izq {
+  float: left;
+
+}
+
+img.der {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+strong {
+  font-style: oblique;
+}
+
+address {
+  clear: both;
+  font-size: 80%;
+}
