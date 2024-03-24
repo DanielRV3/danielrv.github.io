@@ -1,92 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Portafolio Daniel RV</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image" href="media_index/portafolio.png">
-        <link rel="stylesheet" href="estilo_index.css" type="text/css">
-    </head>
-
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="estilo_index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="media_index/portafolio.png">
+</head>
+<body onscroll="navegador()">
+<nav id="selector">
+    <div id="titulo">
+        <div>Portafolio Web</div>
+        <div>Daniel Ramírez Velázquez</div>-
+    </div>
+    <div id="boton-nav">
+        <ul>
+            <li onclick="parcial1()">Parcial 1</li>
+            <li onclick="parcial2()">Parcial 2</li>
+            <li onclick="parcial3()">Parcial 3</li>
+        </ul>
+    </div>
+</nav>
     <header>
-        <div class="logo" style="width: 30%"><img src="media_index/web.png" alt="Logo" style="width: 20%"></div>
-        <div style="flex-direction: column;justify-content: center;">
-            <div><h1>Portafolio Web</h1></div>
-            <div style="margin-bottom: auto"><h2>Daniel Ramírez Velázquez</h2></div>
+        <div id="head">
+            <h1>Portafolio Web</h1>
+            <h2>Daniel Ramírez Velázquez</h2>
         </div>
-        <div class="logo2"><img src="media_index/upslp.jpg" alt="Logo" style="width: 50%;border-radius: 5%;"></div>
+        <div id="upslp"><img src="media_index/upslp.jpg" alt="upslp"></div>
     </header>
 
-    <nav id="inicio">
-        <div class="contenedor">
-            <div style="padding-left: 10px;padding-right: 10px"><h3><strong><a href="#canva">Canva & Google Sites</a></strong></h3></div>
-            <div style="padding-left: 10px;padding-right: 10px"><h3><strong><a href="#practicas">Prácticas</a></strong></h3></div>
-            <div style="padding-left: 10px;padding-right: 10px"><h3><strong><a href="#retos">Retos</a></strong></h3></div>
-            <div style="padding-left: 10px;padding-right: 10px"><h3><strong><a href="#trabajos">Otros Trabajos</a></strong></h3></div>
+    <div class="subtitulo">
+        <div class="boton-menu">
+            <a id="abrir" href="javascript:void(0)" onclick="mostrar();" style="display: flex"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
+            <a id="cerrar" href="javascript:void(0)" onclick="ocultar()" style="display: none"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
         </div>
-    </nav>
-
-    <section id="canva">
-        <div class="titulo">
-            <div class="logo"><a href="#inicio"><img src="media_index/portafolio.png" alt="Volver a Inicio" style="width: 100%"></a></div>
-            <div class="texto"><h2>Canva & Google Sites</h2></div>
-        </div>
-        <div class="contenido">
-            <div class="seleccion" style="justify-content: center">
-                <a href="https://sites.google.com/view/sabatondrv/inicio" target="_blank"><div class="button" style="margin-bottom: 10%;">Google Sites</div></a>
-                <a href="https://whoisufjan.my.canva.site/sabatondrv" target="_blank"><div class="button">Canva</div></a>
+        <h2>Prácticas</h2>
+    </div>
+    <section class="contenido">
+            <div class="menu">
+                <a href="parcial_1/practicas/practica1.html" target="muestra"><div class="button">Práctica 1</div></a>
+                <a href="parcial_1/practicas/practica2.html" target="muestra"><div class="button">Práctica 2</div></a>
+                <a href="parcial_1/practicas/practica3.html" target="muestra"><div class="button">Práctica 3</div></a>
+                <a href="parcial_1/practicas/practica4.html" target="muestra"><div class="button">Práctica 4</div></a>
+                <a href="parcial_1/practicas/practica5.html" target="muestra"><div class="button">Práctica 5</div></a>
+                <a href="parcial_1/practicas/practica6.html" target="muestra"><div class="button">Práctica 6</div></a>
+                <a href="parcial_1/practicas/practica7.html" target="muestra"><div class="button">Práctica 7</div></a>
             </div>
-            <div style="width: 80%"><img src="media_index/sabaton.png" alt="Sites" style="width: 100%;border-radius: 7px"></div>
-        </div>
+            <iframe name="muestra" src="parcial_1/practicas/practica1.html"></iframe>
     </section>
-
-    <section id="practicas">
-        <div class="titulo">
-            <div class="logo"><a href="#inicio"><img src="media_index/portafolio.png" alt="Volver a Inicio" style="width: 100%"></a></div>
-            <div class="texto"><h2>Prácticas</h2></div>
-        </div>
-        <div class="contenido">
-            <div class="seleccion">
-                <a href="parcial_1/practicas/practica1.html" target="iframepracticas"><div class="button">Práctica 1</div></a>
-                <a href="parcial_1/practicas/practica2.html" target="iframepracticas"><div class="button">Práctica 2</div></a>
-                <a href="parcial_1/practicas/practica3.html" target="iframepracticas"><div class="button">Práctica 3</div></a>
-                <a href="parcial_1/practicas/practica4.html" target="iframepracticas"><div class="button">Práctica 4</div></a>
-                <a href="parcial_1/practicas/practica5.html" target="iframepracticas"><div class="button">Práctica 5</div></a>
-                <a href="parcial_1/practicas/practica6.html" target="iframepracticas"><div class="button">Práctica 6</div></a>
-                <a href="parcial_1/practicas/practica7.html" target="iframepracticas"><div class="button">Práctica 7</div></a>
-            </div>
-            <div style="width: 80%"><iframe name="iframepracticas" src="parcial_1/practicas/practica1.html"></iframe></div>
-        </div>
-    </section>
-
-    <section id="retos">
-        <div class="titulo">
-            <div class="logo"><a href="#inicio"><img src="media_index/portafolio.png" alt="Volver a Inicio" style="width: 100%"></a></div>
-            <div class="texto"><h2>Retos</h2></div>
-        </div>
-        <div class="contenido">
-            <div class="seleccion">
-                <a href="parcial_1/trabajos/reto1.html" target="iframeretos"><div class="button">Reto 1</div></a>
-            </div>
-            <div style="width: 80%"><iframe name="iframeretos" src="parcial_1/trabajos/reto1.html"></iframe></div>
-        </div>
-    </section>
-
-    <section id="trabajos">
-        <div class="titulo">
-            <div class="logo"><a href="#inicio"><img src="media_index/portafolio.png" alt="Volver a Inicio" style="width: 100%"></a></div>
-            <div class="texto"><h2>Otros Trabajos</h2></div>
-        </div>
-        <div class="contenido">
-            <div class="seleccion">
-                <a href="parcial_1/sistema_solar/sistemasolar.html" target="iframetrabajos"><div class="button">Sistema Solar</div></a>
-                <a href="parcial_1/trabajos/infografia.jpg" target="iframetrabajos"><div class="button">Infografía Diseño Web</div></a>
-                <a href="parcial_1/trabajos/reproductor.html" target="iframetrabajos"><div class="button">Reproductor</div></a>
-                <a href="parcial_1/trabajos/formulario.html" target="iframetrabajos"><div class="button">Formulario Tutorías</div></a>
-            </div>
-            <div style="width: 80%"><iframe name="iframetrabajos" src="parcial_1/sistema_solar/sistemasolar.html"></iframe></div>
-        </div>
-    </section>
-    </body>
+    <script src="funciones.js"></script>
+</body>
 </html>
