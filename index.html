@@ -8,19 +8,20 @@
     <link rel="icon" type="image" href="media_index/portafolio.png">
 </head>
 <body onscroll="navegador()">
-<nav id="selector">
-    <div id="titulo">
-        <div>Portafolio Web</div>
-        <div>Daniel Ramírez Velázquez</div>-
-    </div>
-    <div id="boton-nav">
-        <ul>
-            <li onclick="parcial1()">Parcial 1</li>
-            <li onclick="parcial2()">Parcial 2</li>
-            <li onclick="parcial3()">Parcial 3</li>
-        </ul>
-    </div>
-</nav>
+    <nav id="selector">
+        <div id="titulo">
+            <div>Portafolio Web</div>
+            <div>Daniel Ramírez Velázquez</div>-
+        </div>
+        <div id="boton-nav">
+            <ul>
+                <li onclick="parcial1()">Parcial 1</li>
+                <li onclick="parcial2()">Parcial 2</li>
+                <li onclick="parcial3()">Parcial 3</li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <div id="head">
             <h1>Portafolio Web</h1>
@@ -31,23 +32,97 @@
 
     <div class="subtitulo">
         <div class="boton-menu">
-            <a id="abrir" href="javascript:void(0)" onclick="mostrar();" style="display: flex"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
-            <a id="cerrar" href="javascript:void(0)" onclick="ocultar()" style="display: none"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
+            <a class="abrir" href="javascript:void(0)" onclick="mostrar(0);" style="display: flex"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
+            <a class="cerrar" href="javascript:void(0)" onclick="ocultar(0);" style="display: none"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
         </div>
         <h2>Prácticas</h2>
     </div>
     <section class="contenido">
-            <div class="menu">
-                <a href="parcial_1/practicas/practica1.html" target="muestra"><div class="button">Práctica 1</div></a>
-                <a href="parcial_1/practicas/practica2.html" target="muestra"><div class="button">Práctica 2</div></a>
-                <a href="parcial_1/practicas/practica3.html" target="muestra"><div class="button">Práctica 3</div></a>
-                <a href="parcial_1/practicas/practica4.html" target="muestra"><div class="button">Práctica 4</div></a>
-                <a href="parcial_1/practicas/practica5.html" target="muestra"><div class="button">Práctica 5</div></a>
-                <a href="parcial_1/practicas/practica6.html" target="muestra"><div class="button">Práctica 6</div></a>
-                <a href="parcial_1/practicas/practica7.html" target="muestra"><div class="button">Práctica 7</div></a>
-            </div>
-            <iframe name="muestra" src="parcial_1/practicas/practica1.html"></iframe>
+        <div class="menu">
+            <a href="parcial_1/practicas/practica1.html" target="practicas"><div class="button">Práctica 1</div></a>
+            <a href="parcial_1/practicas/practica2.html" target="practicas"><div class="button">Práctica 2</div></a>
+            <a href="parcial_1/practicas/practica3.html" target="practicas"><div class="button">Práctica 3</div></a>
+            <a href="parcial_1/practicas/practica4.html" target="practicas"><div class="button">Práctica 4</div></a>
+            <a href="parcial_1/practicas/practica5.html" target="practicas"><div class="button">Práctica 5</div></a>
+            <a href="parcial_1/practicas/practica6.html" target="practicas"><div class="button">Práctica 6</div></a>
+            <a href="parcial_1/practicas/practica7.html" target="practicas"><div class="button">Práctica 7</div></a>
+        </div>
+        <div class="menu">
+            <a href="parcial_2/practica_1/practica1.html" target="practicas"><div class="button">Práctica 1</div></a>
+            <a href="parcial_2/practica_2/reto1.html" target="practicas"><div class="button">Práctica 2</div></a>
+            <a href="parcial_2/practica_3/reto2.html" target="practicas"><div class="button">Práctica 3</div></a>
+            <a href="parcial_2/practica_4/reto3.html" target="practicas"><div class="button">Práctica 4</div></a>
+            <a href="parcial_1/practicas/practica5.html" target="practicas"><div class="button">Práctica 5</div></a>
+            <a href="parcial_1/practicas/practica6.html" target="practicas"><div class="button">Práctica 6</div></a>
+            <a href="parcial_1/practicas/practica7.html" target="practicas"><div class="button">Práctica 7</div></a>
+            <a href="parcial_2/practica_8/chess.html" target="practicas"><div class="button">Práctica 8</div></a>
+            <a href="parcial_2/practica_9/siete_barrios.html" target="practicas"><div class="button">Práctica 9</div></a>
+            <a href="parcial_2/practica_10/infografia2.pdf" target="practicas"><div class="button">Práctica 10</div></a>
+            <a href="parcial_2/practica_11/practica2.html" target="practicas"><div class="button">Práctica 11</div></a>
+            <a href="parcial_2/practica_12/practica12.html" target="practicas"><div class="button">Práctica 12</div></a>
+            <a href="parcial_2/practica_13/practica13.html" target="practicas"><div class="button">Práctica 13</div></a>
+            <a href="parcial_2/practica_14/museos.html" target="practicas"><div class="button">Práctica 14</div></a>
+            <a href="parcial_2/practica_15/revistas.html" target="practicas"><div class="button">Práctica 15</div></a>
+        </div>
+        <div class="menu">
+            <div class="button">Proximamente</div>
+        </div>
+        <iframe name="practicas" src="parcial_1/practicas/practica1.html"></iframe>
     </section>
+
+
+    <div class="subtitulo">
+        <div class="boton-menu">
+            <a class="abrir" href="javascript:void(0)" onclick="mostrar(1);" style="display: flex"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
+            <a class="cerrar" href="javascript:void(0)" onclick="ocultar(1);" style="display: none"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
+        </div>
+        <h2>Retos</h2>
+    </div>
+    <section class="contenido">
+        <div class="menu">
+            <a href="parcial_1/trabajos/reto1.html" target="reto"><div class="button">Reto 1: Materias</div></a>
+        </div>
+        <div class="menu">
+            <a href="parcial_2/practica_2/reto1.html" target="reto"><div class="button">Reto 1</div></a>
+            <a href="parcial_2/practica_3/reto2.html" target="reto"><div class="button">Reto 2</div></a>
+            <a href="parcial_2/practica_4/reto3.html" target="reto"><div class="button">Reto 3</div></a>
+        </div>
+        <div class="menu">
+            <div class="button">Proximamente</div>
+        </div>
+        <iframe name="reto" src="parcial_1/trabajos/reto1.html"></iframe>
+    </section>
+
+    <div class="subtitulo">
+        <div class="boton-menu">
+            <a class="abrir" href="javascript:void(0)" onclick="mostrar(2);" style="display: flex"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
+            <a class="cerrar" href="javascript:void(0)" onclick="ocultar(2);" style="display: none"><img src="media_index/portafolio.png" alt="Volver a Inicio"></a>
+        </div>
+        <h2>Trabajos Destacados</h2>
+    </div>
+    <section class="contenido">
+        <div class="menu">
+            <a href="https://sites.google.com/view/sabatondrv/inicio" target="_blank" onclick="sites()"><div class="button">Google Sites</div></a>
+            <a href="https://whoisufjan.my.canva.site/sabatondrv" target="_blank" onclick="canva()"><div class="button">Canva</div></a>
+            <a href="parcial_1/sistema_solar/sistemasolar.html" target="trabajos"><div class="button">Sistema Solar</div></a>
+            <a href="parcial_1/trabajos/reproductor.html" target="trabajos"><div class="button">Reproductor</div></a>
+            <a href="parcial_1/trabajos/frames.html" target="trabajos"><div class="button">Iframes</div></a>
+            <a href="parcial_1/trabajos/formulario.html" target="trabajos"><div class="button">Formulario</div></a>
+        </div>
+        <div class="menu">
+            <a href="parcial_2/practica_2/reto1.html" target="reto"><div class="button">Reto 1</div></a>
+            <a href="parcial_2/practica_3/reto2.html" target="reto"><div class="button">Reto 2</div></a>
+            <a href="parcial_2/practica_4/reto3.html" target="reto"><div class="button">Reto 3</div></a>
+        </div>
+        <div class="menu">
+            <div class="button">Proximamente</div>
+        </div>
+        <iframe name="trabajos" src="parcial_1/sistema_solar/sistemasolar.html"></iframe>
+    </section>
+
+
+
+
     <script src="funciones.js"></script>
 </body>
 </html>

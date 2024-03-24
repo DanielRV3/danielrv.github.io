@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Madimi+One&display=swap');
+
+body{
+    background-color: rgba(255,156,81,0.71);
+    padding: 0;
+    margin: 0;
+}
+header{
+    display: flex;
+    flex-flow: column;
+    background-image: url("../media/titulo.jpg");
+    height:50vh;
+}
+h1{
+    text-align: center;
+    color: white;
+    text-shadow: 0 5px #000000;
+    font-family: "Angkor",serif;
+    font-size: 80px;
+}
+h2{
+    text-align: center;
+    color: antiquewhite;
+    font-family: "Kanit",serif;
+    font-weight: bolder;
+    text-shadow: 2px 4px #000000;
+    font-size: 50px;
+}
+p{
+    text-align: left;
+    background-color: rgba(255,119,66,0.71);
+    font-size: 22px;
+    width: 600px;
+}
+img{
+    padding: 10px;
+    background-color: antiquewhite;
+}
+div{
+    justify-content: center;
+    display: flex;
+
+}
+.imags{
+    background-color: #dc4245;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 40vh;
+    width: 100%;
+    justify-content: space-evenly;
+    object-fit: contain;
+}
+
+.lyrics{
+    flex-flow: column;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.estribillo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: left;
+    background-color: rgb(248, 136, 55);
+    font-family: "Kanit",serif;
+    font-size: 24px;
+    padding: 10px;
+    width: 100%;
+}
+.estrofa{
+    justify-content: left;
+    background-color: rgba(255,119,66,0.71);
+    font-family: "Abel",serif;
+    font-size: 24px;
+    padding: 10px;
+    width: 100%;
+}

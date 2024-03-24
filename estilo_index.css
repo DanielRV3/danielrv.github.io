@@ -54,6 +54,7 @@ nav{
     position: fixed;
     overflow: hidden;
     align-items: center;
+    z-index: 1;
     height: 0;
     width: 100%;
     font-size: 2rem;
@@ -69,7 +70,6 @@ a{
 
 section{
     margin: 0 0 2vh 0;
-
 }
 img{
     width: 100%;
@@ -83,13 +83,8 @@ iframe{
     align-self: center;
     height: 90%;
     background-color: #eaeeff;
+    overflow: hidden;
     border-radius: 7px;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
 }
 
 #titulo{
@@ -137,7 +132,7 @@ iframe{
 
 .subtitulo{
     align-items: center;
-    margin-top: 0;
+    margin: 0;
     width: 100%;
     height: 10vh;
     display: flex;
@@ -157,21 +152,29 @@ iframe{
     width: 5%;
     height: fit-content;
     object-fit: contain;
+
+       /* filter: hue-rotate(250deg);*/
+
 }
 
 .contenido{
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
     width: 100%;
-    margin: 0;
+    margin: 0 0 5vh 0;
     height: 77vh;/*77*/
     background-color: rgba(114,120,146,0.74);
     align-content: center;
+    transition-delay: 0s;
+    transition: height 1s;
+
 }
 .menu{
-    padding: 5% 0 5% 0;
+    /*padding: 5% 0 5% 0;*/
     background-color: rgba(87, 102, 162, 0.74);
-    overflow-x: hidden;
+    height: 100%;
+    overflow: hidden;
     width: 0;
     display: flex;
     flex-direction: column;
@@ -183,13 +186,12 @@ iframe{
 }
 
 .menu a{
-    margin: 0 10% 0 10%;
+   margin: 0 10% 0 10%;
 }
 .button{
     background-color: rgba(47,46,80,0.74);
     padding: 10px;
     color: transparent;
-    scrollbar-gutter: inherit;
     border-radius: 7px;
     text-align: center;
     font-size: clamp(0.7rem, 2vw, 18px);
