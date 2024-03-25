@@ -10,8 +10,11 @@ body{
 header{
     display: flex;
     flex-flow: column;
+    justify-content: space-between;
     background-image: url("../media/titulo.jpg");
-    height:50vh;
+    height: clamp(100vh,fit-content,200vh);
+    padding-bottom: 0;
+    /*margin-bottom: 10vh;*/
 }
 h1{
     text-align: center;
@@ -44,10 +47,12 @@ div{
 
 }
 .imags{
-    background-color: #dc4245;
+    align-self: end;
+    background-color: rgba(187, 75, 76, 0.78);
     padding-top: 50px;
     padding-bottom: 50px;
-    height: 40vh;
+    margin-bottom: 0;
+    height: 46vh;
     width: 100%;
     justify-content: space-evenly;
     object-fit: contain;
