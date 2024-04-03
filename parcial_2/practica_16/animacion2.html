@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<style>
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.espada1{
+    width: 170px;
+    height: 170px;
+    background-image: url("media/espada.png");
+    transform: rotateZ(-90deg);
+    z-index: 1;
+    background-size: contain;
+    position: relative;
+    animation-name: espada;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.escudo1 {
+    width: 170px;
+    height: 170px;
+    background-image: url("media/escudo.png");
+    background-size: contain;
+    position: relative;
+    animation-name: escudo;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.espada2{
+    width: 170px;
+    height: 170px;
+    background-image: url("media/espada.png");
+    transform: rotateZ(90deg) rotateY(180deg);
+    z-index: 1;
+    background-size: contain;
+    position: relative;
+    animation-name: espada2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.escudo2 {
+    width: 170px;
+    height: 170px;
+    background-image: url("media/escudo.png");
+    transform: rotateY(180deg);
+    background-size: contain;
+    position: relative;
+    animation-name: escudo2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes escudo {
+    35%  {left: 0}
+    59%  {left: 100px}
+    60%  {left: 60px}
+    99%  {left: 0}
+}
+@keyframes escudo2 {
+    0%   {right: 0}
+    20%  {right: 100px}
+    31%  {right: 60px}
+    100% {right: 0}
+}
+@keyframes espada {
+    0%   {left: 0}
+    25%  {left: 250px}
+    30%  {transform: rotateZ(0deg)}
+    70%  {transform: rotateZ(-90deg)}
+    100% {left: 0}
+}
+@keyframes espada2 {
+    0%   {right: 250px}
+    25%  {right: 0}
+    60%  {transform: rotateZ(90deg) rotateY(180deg)}
+    70%  {transform: rotateZ(0deg) rotateY(180deg)}
+    100% {right: 250px}
+}
+/*30%  {transform: rotateZ(0deg) rotateY(180deg)}
+    70%  {transform: rotateZ(90deg) rotateY(180deg)}*/
+</style>
+    <title>Animación 2</title>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+<div class="contenedor">
+    <div style="display: flex;margin-right: 30px">
+        <div class="espada1"></div>
+        <div class="escudo1"></div>
+    </div>
+    <div style="display: flex;margin-left: 30px">
+        <div class="escudo2"></div>
+        <div class="espada2"></div>
+    </div>
+</div>
+
+</body>
+</html>
+
+

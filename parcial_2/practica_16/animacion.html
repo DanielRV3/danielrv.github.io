@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<style> 
+div {
+  width: 250px;
+  height: 200px;
+    background-repeat: no-repeat;
+  background-image: url("../../media_index/portafolio.png");
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+@keyframes example {
+  0%   {transform: rotateZ(0deg);left:0; top:0;}
+  25%  {transform: rotateZ(90deg);left:400px; top:0;}
+  50%  {transform: rotateZ(180deg);left:400px; top:400px;}
+  75%  {transform: rotateZ(270deg);left:0; top:400px;}
+  100% {transform: rotateZ(360deg);left:0; top:0;}
+}
+</style>
+    <title>Animación 1</title>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+
+<p>The animation-delay property specifies a delay for the start of an animation. The following example has a 2 seconds delay before starting the animation:</p>
+
+<div></div>
+
+</body>
+</html>
+
+
