@@ -259,7 +259,7 @@ iframe{
         text-align: left;
     }
     #titulo div:first-child{
-        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-size: clamp(1.5rem, 2vh, 2rem);
         padding: 2vh 0 1vh 0;
     }
     #titulo div:last-child{
