@@ -257,7 +257,7 @@ function mostrarnav(){
         document.getElementById("selector").style.width="25vw";
         document.getElementById("selector").style.height="100vh";
         document.getElementById("titulo").style.margin="0 2vw auto 2vw";
-        document.getElementById("titulo").querySelectorAll("div")[0].style.fontSize="clamp(1.7rem, 2.7vw, 2.7rem)";
+        document.getElementById("titulo").querySelectorAll("div")[0].style.fontSize="clamp(1.5rem, 2.5vw, 2.5rem)";
         document.getElementById("titulo").querySelectorAll("div")[1].style.display="unset";
         btncel = true;
     }else{

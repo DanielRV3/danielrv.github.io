@@ -259,11 +259,11 @@ iframe{
         text-align: left;
     }
     #titulo div:first-child{
-        font-size: clamp(1.7rem, 2.7vw, 2.7rem);
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
         padding: 2vh 0 1vh 0;
     }
     #titulo div:last-child{
-        font-size: clamp(1rem, 2vw, 2rem);
+        font-size: clamp(0.8rem, 1.5vw, 1.8rem);
         padding: 0 0 2vh 0;
     }
 
@@ -278,14 +278,14 @@ iframe{
         justify-content: space-evenly;
         padding: 20% 0 20% 0;
         align-items: center;
-        margin: 0 2vh;
+        margin: 0 2vw;
         width: 100%;
-        font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
     }
     #boton-nav li{
         /*flex-shrink: 1;*/
         flex-basis: 7vh;
-        width: calc(100%);
+        width: 100%;
         margin: 2vh 0;
         border-radius: 15px;
         padding: 0;
