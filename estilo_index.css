@@ -1,3 +1,7 @@
+/*Hasta 1200x860 se ve bien
+Cambiar diseño a tamaños menores de eso*/
+
+/*width 860 tamaño cel*/
 *{
     transition: background-color 0.4s;
 }
@@ -8,7 +12,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, Calibri, sans-serif;
-    overflow: scroll;
 }
 
 header{
@@ -41,17 +44,20 @@ header{
     }
 }
 #upslp{
+    position: absolute;
     align-self: flex-start;
-    width: 15vw;
-    margin: 2vw;
+    justify-self: right;
+    width: 25vh;
+    margin: 2vh;
     img{
-        border-radius: 8px;
+        border-radius: 1vh;
         filter: opacity(80%);
     }
 }
 
-nav{
+#selector{
     display: flex;
+    flex-direction: row;
     position: fixed;
     overflow: hidden;
     align-items: center;
@@ -88,8 +94,15 @@ iframe{
     border-radius: 7px;
 }
 
+#btn-cel{
+    display: none;
+    padding: 1vh;
+    height: 6vh;
+    width: 6vh;
+}
+
 #titulo{
-    margin: auto auto 0 2vw;
+    margin: 0 auto 0 2vw;
     text-align: left;
 }
 #titulo div:first-child{
@@ -114,10 +127,10 @@ iframe{
 }
 
 #boton-nav li{
-    object-fit: cover;
     list-style: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: auto 2vw auto 2vw;
     border-radius: 15px;
     padding: 5% 10px 5% 10px;
@@ -141,13 +154,14 @@ iframe{
 }
 
 .subtitulo{
-    align-items: center;
     margin: 0;
     width: 100%;
     height: 10vh;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     background-color: #3D405B;
+    padding: 0;
     transition: margin-top 0.4s, background-color 0.4s;
 }
 .subtitulo h2{
@@ -156,13 +170,10 @@ iframe{
     font-size: 2rem;
 }
 .boton-menu{
-    display: compact;
-    text-align: left;
+    display: flex;
     padding-left: 15px;
-    width: 5%;
-    height: fit-content;
+    height: inherit;
     object-fit: contain;
-
 }
 
 .contenido{
@@ -204,7 +215,7 @@ iframe{
     justify-content: center;
     color: transparent;
     border-radius: 7px;
-    font-size: clamp(0.7rem, 2vw, 2vh);
+    font-size: clamp(1rem, 2.5vw, 2vh);
     height: 2vh;
     transition: color 0.4s;
     overflow: hidden;
@@ -224,6 +235,60 @@ iframe{
     background-color: #fc8469 !important;
 }
 
-/*footer{
-    height: 20vh;
-}*/
+@media (max-width: 860px) {
+    #head{
+        h1{
+            font-size: clamp(4rem, 6vw, 7rem);
+        }
+        h2{
+            font-size: clamp(2rem, 2.5vw, 3rem);
+        }
+    }
+    #selector{
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    #btn-cel{
+        display: flex;
+    }
+    #titulo{
+        margin: 0 2vw auto 2vw;
+        text-align: left;
+    }
+    #titulo div:first-child{
+        font-size: clamp(1.7rem, 2.7vw, 2.7rem);
+        padding: 2vh 0 1vh 0;
+    }
+    #titulo div:last-child{
+        font-size: clamp(1rem, 2vw, 2rem);
+        padding: 0 0 2vh 0;
+    }
+
+    #boton-nav{
+        margin: 0 1vh 1vh 1vh;
+        width: calc(100% - 2vh);
+    }
+
+    #boton-nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 20% 0 20% 0;
+        align-items: center;
+        margin: 0 2vh;
+        width: 100%;
+        font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    }
+    #boton-nav li{
+        /*flex-shrink: 1;*/
+        flex-basis: 7vh;
+        width: calc(100%);
+        margin: 2vh 0;
+        border-radius: 15px;
+        padding: 0;
+        height: 15vh;
+    }
+}

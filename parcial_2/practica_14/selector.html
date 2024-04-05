@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector Practica 14</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Helvetica, Calibri, sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        .contenedor{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 70%;
+        }
+        .boton{
+            background-color: #3b5e3b;
+            padding: 2vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.5vh;
+            margin: 2vh;
+            font-size: clamp(3rem, 4vw, 5vh);
+            width: 250px;
+            height: fit-content;
+        }
+        .boton:hover{
+            background-color: rgb(62, 119, 81)
+        }
+    </style>
+</head>
+<body>
+<div class="contenedor">
+    <a href="ejercicio_1.html"><div class="boton">Ejercicio 1</div></a>
+    <a href="reto_1.html"><div class="boton">Reto 1</div></a>
+    <a href="museos.html"><div class="boton">Museos</div></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    font-family: Calibri,sans-serif;
+    font-size: 3rem;
+}
+
+a{
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px orangered;
+    margin: 0 0 10px 0;
+}
+img{
+    width: 200px;
+    height: fit-content;
+}
+
+.boton {
+    width: 95px;
+    padding: 15px;
+    margin: 0 0 5px 5px;
+    transition: width 0.5s, background-color 0.3s, color 0.3s;
+    font-family: Verdana,sans-serif;
+    background-color: #0e4870;
+    color: whitesmoke;
+}
+.boton:hover {
+    width: 135px;
+    background-color: rgba(98, 161, 195, 0.56);
+    color: black;
+}
+
+#contacto {
+    width: 95px;
+    padding: 15px;
+    margin: 0 0 5px 5px;
+    transition: width 0.5s, background-color 0.3s, color 0.3s;
+    font-family: Verdana,sans-serif;
+    color: whitesmoke;
+    background-color: rgb(255, 122, 17);
+}
+#contacto:hover {
+    width: 135px;
+    background-color: rgb(245, 158, 96);
+    color: #481f02;
+}

@@ -1,5 +1,7 @@
 let parcial = 0;
 let altura= "77vh"
+let nav = false;
+let btncel = false;
 
 const subtitulos= document.querySelectorAll(".subtitulo");
 const secciones = document.querySelectorAll(".contenido");
@@ -10,7 +12,6 @@ const nav_btn = document.querySelectorAll("#boton-nav ul li");
 const botonMenu=document.querySelectorAll(".boton-menu img");
 
 function transicion(){
-
     for(let i=0; secciones.length;i++){
         secciones[i].style.height = altura;
     }
@@ -36,7 +37,13 @@ function reset3(){
 function parcial1(){
     document.body.style.backgroundColor = "rgba(137,163,255,0.65)"
     document.body.style.height = "200vh";
-    //document.body.style.overflow = "hidden";
+
+    const navbar= document.getElementById("selector");
+    if(document.body.offsetWidth <=860){
+        btncel=false;
+        document.getElementById("selector").style.transition="height 0s, width 0.4s";document.getElementById("selector").style.transition="height 0s, width 0.4s";
+        mininav();
+    }
 
     nav_btn[0].style.backgroundColor = "whitesmoke"
     nav_btn[1].style.backgroundColor = "#222222"
@@ -74,7 +81,13 @@ function parcial1(){
 function parcial2(){
     document.body.style.backgroundColor = "rgba(172,255,166,0.65)";
     document.body.style.height = "200vh";
-    //document.body.style.overflow = "hidden";
+
+    const navbar= document.getElementById("selector");
+    if(document.body.offsetWidth <=860){
+        btncel=false;
+        document.getElementById("selector").style.transition="height 0s, width 0.4s";
+        mininav();
+    }
 
     nav_btn[0].style.backgroundColor = "#222222"
     nav_btn[1].style.backgroundColor = "whitesmoke"
@@ -111,11 +124,15 @@ function parcial2(){
     parcial=1;
 }
 function parcial3(){
-
-
     document.body.style.backgroundColor = "rgba(255,136,107,0.65)";
     document.body.style.height = "200vh";
     //document.body.style.overflow = "hidden";
+    const navbar= document.getElementById("selector");
+    if(document.body.offsetWidth <=860){
+        btncel=false;
+        document.getElementById("selector").style.transition="height 0s, width 0.4s";
+        mininav();
+    }
 
     nav_btn[0].style.backgroundColor = "#222222"
     nav_btn[1].style.backgroundColor = "#222222"
@@ -154,9 +171,13 @@ function parcial3(){
 function mostrar(seccion) {
     let menuParcial = document.getElementsByClassName("contenido")[seccion].getElementsByClassName("menu")[parcial];
     let botonesSeccion = menuParcial.getElementsByClassName("button");
-
-    iframes[seccion].style.width = "75vw";
-    menuParcial.style.width = "20vw";
+    if(document.body.offsetWidth >= 1200){
+        iframes[seccion].style.width = "75vw";
+        menuParcial.style.width = "20vw";
+    }else{
+        iframes[seccion].style.width = "70vw";
+        menuParcial.style.width = "25vw";
+    }
     //document.getElementsByClassName("menu")[x].style.padding = "1%";
     for(let i=0; i<botonesSeccion.length;i++){
         botonesSeccion[i].style.color = "whitesmoke";
@@ -187,14 +208,62 @@ function navegador() {
     const navbar= document.getElementById("selector");
     const altura = head.offsetHeight*0.75;
 
-    if (window.scrollY >= altura) {
-        navbar.style.height = "13vh";
-        /*head.style.marginBottom = "13vh";
-        sub.style.marginTop = "13vh";*/
-    } else {
-        navbar.style.height = "0";
-        /*head.style.marginBottom = "0";
-        sub.style.marginTop = "0";*/
+    if(document.body.offsetWidth >= 860){
+        if (window.scrollY >= altura){
+            navbar.style.height = "13vh";
+            nav=true;
+        }else{
+            navbar.style.height = "0";
+            nav= false;
+        }
+    }else{
+        if (btncel === false && window.scrollY >= altura) {
+            navbar.style.transition = "height 0.4s, width 0s";
+            mininav();
+            nav = true;
+        }
+        if(window.scrollY < altura){
+            navbar.style.transition="height 0.4s, width 0s";
+            navbar.style.height = "0";
+            btncel= false;
+            nav= false;
+        }
+    }
+}
+
+function mininav(){
+    document.getElementById("boton-nav").style.display="none";
+    document.getElementById("selector").style.width="100vw";
+    document.getElementById("selector").style.height="8vh";
+    document.getElementById("selector").style.flexDirection="row";
+    document.getElementById("selector").style.alignItems="center";
+    document.getElementById("titulo").style.margin="0 auto";
+    document.getElementById("titulo").querySelectorAll("div")[0].style.fontSize="clamp(2rem, 4vw, 4rem)";
+    document.getElementById("titulo").querySelectorAll("div")[1].style.display="none";
+}
+function maxnav(){
+    document.getElementById("boton-nav").style.display="flex";
+    document.getElementById("titulo").style.margin="0 auto 0 2vw";
+    document.getElementById("titulo").querySelectorAll("div")[0].style.fontSize="clamp(1.5rem, 2.5vw, 2.5rem)";
+    document.getElementById("titulo").querySelectorAll("div")[1].style.display="unset";
+}
+
+function mostrarnav(){
+    if(btncel===false){
+        document.getElementById("boton-nav").style.display="flex";
+        document.getElementById("selector").style.transition="height 0.4s, width 0s";
+        document.getElementById("selector").style.flexDirection="column";
+        document.getElementById("selector").style.alignItems="flex-start";
+        document.getElementById("selector").style.width="25vw";
+        document.getElementById("selector").style.height="100vh";
+        document.getElementById("titulo").style.margin="0 2vw auto 2vw";
+        document.getElementById("titulo").querySelectorAll("div")[0].style.fontSize="clamp(1.7rem, 2.7vw, 2.7rem)";
+        document.getElementById("titulo").querySelectorAll("div")[1].style.display="unset";
+        btncel = true;
+    }else{
+        document.getElementById("selector").style.transition="height 0s, width 0.4s";
+        mininav();
+        btncel = false;
     }
 }
 function botonesMenu(seccion,numboton){
@@ -221,8 +290,31 @@ function botonesMenu(seccion,numboton){
     }
 }
 function sites(){
-    document.getElementsByName("trabajos")[0].src = "media_index/sabaton.html";
+    document.getElementsByName("practicas")[0].src = "media_index/sabaton.html";
 }
 function canva(){
-    document.getElementsByName("trabajos")[0].src = "media_index/sabaton_canva.html";
+    document.getElementsByName("practicas")[0].src = "media_index/sabaton_canva.html";
 }
+
+function check(){
+    const navbar= document.getElementById("selector");
+    if(nav===true){
+        if (document.body.offsetWidth >= 860) {
+            navbar.style.height = "13vh";
+            maxnav();
+        } else if(btncel===false){
+            navbar.style.height = "8vh";
+            mininav();
+        }
+    }else{
+        navbar.style.height = "0";
+    }
+
+    if(document.body.offsetWidth >860){
+        document.getElementById("btn-cel").style.display="none";
+    }else{
+        document.getElementById("btn-cel").style.display="flex";
+    }
+
+}
+window.addEventListener("resize",check);

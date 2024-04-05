@@ -41,20 +41,20 @@ img{
     border: solid 1.5vw;
     padding: 1.5vw;
 }
-div:nth-child(even){
+div:nth-child(odd){
     border-color: orangered;
 }
 
-div:nth-child(even) img{
+div:nth-child(odd) img{
     border-color: orangered;
     background-color: #ffaa33;
 }
 
-div:nth-child(odd){
+div:nth-child(even){
     border-color: #ffaa33;
 }
 
-div:nth-child(odd) img{
+div:nth-child(even) img{
     border-color: #ffaa33;
     background-color: orangered;
 }
