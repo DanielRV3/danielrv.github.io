@@ -57,6 +57,7 @@ h1{
 section{
     border: solid 1px white;
     margin: 0.5vw 3vw;
+    padding: 0.5vw;
     border-top-right-radius: 1.6vw;
     font-family: "Roboto Light",sans-serif;
 }
@@ -82,7 +83,7 @@ h2:first-letter{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1vw;
+   /* margin: 1vw;*/
 }
 section .imagen img{
     width: 100%;
