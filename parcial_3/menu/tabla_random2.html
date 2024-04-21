@@ -1,0 +1,57 @@
+<html lang="es">
+<head>
+    <title>Tabla random</title>
+    <meta charset="UTF-8">
+    <script type = "text/javascript">
+        function alertName() {
+            const filas = parseInt(document.getElementById("myform").filas.value);
+            const cols = parseInt(document.getElementById("myform").cols.value);
+            let char = document.getElementById("myform").char.value;
+            document.write("<table>");
+            for(let i=0;i<cols;i++) {
+                document.write("<tr>");
+                document.querySelectorAll("tr")[i].style.border = "black solid 1px";
+                document.querySelectorAll("tr")[i].style.borderCollapse = "collapse";
+
+                for (let j=0;j<filas;j++){
+                    document.write("<td>");
+                    document.write(char);
+                    document.write("</td>");
+                    document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.border = "black solid 2px";
+                    document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.borderCollapse = "collapse";
+                    document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.width = "30px";
+                    document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.height = "30px";
+                    document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.padding = "5px";
+                    if(i%2===0){
+                        document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.color = "rgb(9, 62, 2)";
+                        document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = "#99bb80";
+                    }else{
+                        document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.color = "rgb(2,60,62)";
+                        document.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = "#80bbb6";
+                    }
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+
+            document.querySelector("table").style.border = "black solid 1px";
+            document.querySelector("table").style.borderCollapse = "collapse";
+            return true;
+        }
+    </script>
+    <style>
+        div{
+            color: rgb(9, 62, 2);
+        }
+    </style>
+</head>
+<body>
+<form id="myform" onsubmit="return alertName();">
+    <p><label for="filas">Cuántas filas</label><input id="filas" name="filas" type="number"/></p>
+    <p><label for="cols">Cuántas columnas</label><input id="cols" name="cols" type="number"/></p>
+    <p><label for="char">Caracter</label><input id="char" name="char" type="text"/></p>
+    <p><input type="submit"/></p>
+</form>
+</body>
+</html>
+

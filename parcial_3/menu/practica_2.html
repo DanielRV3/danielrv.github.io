@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        div{
+            margin: 15px 1px;
+        }
+    </style>
+    <script type = "text/javascript">
+
+
+        function check(){
+            const user = document.getElementById("login").usernam.value;
+            const pass = document.getElementById("login").passwor.value;
+            const username = "Daniel";
+            const password = "1234";
+            if(user===username && pass===password){
+                document.write("<a href='../../index.html'><p>Acceso permitido</p></a>");
+            }else{
+                document.write("<p>Acceso denegado</p>");
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<form id="login" onsubmit="return check();">
+    <p>Usuario: <label for="usernam"><input id="usernam" name="usernam" type="text"/></label> <br></p>
+    <p>Contraseña: <label for="passwor"><input id="passwor" name="passwor" type="text"/></label> <br></p>
+    <input type="submit"/>
+</form>
+</body>
+</html>
