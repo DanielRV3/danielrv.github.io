@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reto 2</title>
+</head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<h1>Funciones Trigonométricas</h1>
+<form action="javascript:void(0)" id="form" onsubmit="grafica();">
+    <label for="inicio">Inicio: <input type="number" id="inicio" name="inicio"></label> <br> <br>
+    <label for="final">Final: <input type="number" id="final" name="final"></label> <br> <br>
+    <p>Función:</p>
+    <input type="radio" name="tipo" id="f1" value="1">  <label for="f1" >Seno</label><br>
+    <input type="radio" name="tipo" id="f2" value="2">  <label for="f2">Coseno</label><br>
+    <input type="radio" name="tipo" id="f3" value="3">  <label for="f3">Tangente</label><br>
+    <input type="radio" name="tipo" id="f4" value="4">  <label for="f4">Cotangente</label><br> <br>
+    <input type="submit">
+</form>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script src="reto2.js"></script>
+</body>
+</html>

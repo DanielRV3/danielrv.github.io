@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+        let units = prompt("Unidades a utilizar","m");
+        let width = parseInt(prompt("Volumen de la caja, ingresa el ancho", "0"));
+        let height = parseInt(prompt("Volumen de la caja, ingresa la altura", "0"));
+        let length = parseInt(prompt("Volumen de la caja, ingresa la longitud", "0"));
+        let volume = width * height * length;
+        alert(`El volumen de la caja es ${volume}`);
+
+        document.querySelector("h1").innerHTML = "Datos Seleccionados: "
+        document.querySelectorAll("p")[0].innerHTML = "Ancho: " + width + " " + units;
+        document.querySelectorAll("p")[1].innerHTML = "Alto: " + height + " " + units;
+        document.querySelectorAll("p")[2].innerHTML = "Largo: " + length + " " + units;
+        document.querySelectorAll("p")[3].innerHTML = "Volumen: "+ volume + " " + units + " cúbicos";
+    </script>
+</body>
+</html>

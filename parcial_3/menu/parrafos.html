@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Parrafos</title>
+    <script type="text/javascript">
+        function alertName(){
+            const p = parseInt(document.getElementById("myform").p.value);
+            for (let i = 1; i <= p; i++) {
+                document.write("<h2>Este es el párrafo "+i+"</h2>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Párrafos</h1>
+    <form id="myform" onsubmit="alertName();">
+        <p><label for="p">Escribe cuántos párrafos quieres generar </label><input id="p" name="p" type="number"/></p>
+        <p><input type="submit"/></p>
+    </form>
+</body>
+</html>

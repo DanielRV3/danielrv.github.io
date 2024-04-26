@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reto1</title>
+</head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<h1>Función Seno</h1>
+<form action="javascript:void(0)" id="form">
+    <label for="inicio">Inicio: <input type="number" id="inicio" name="inicio"></label> <br> <br>
+    <label for="final">Final: <input type="number" id="final" name="final"></label> <br> <br>
+    <input type="submit" onclick="grafica()">
+</form>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script>
+    function grafica(){
+        const exp = "Math.sin(x)";
+        // Generate values
+        const inicio = parseInt(document.getElementById("form").inicio.value);
+        const final = parseInt(document.getElementById("form").final.value);
+        if(inicio<final){
+            const xValues = []
+            const yValues = [];
+            for (let x = inicio; x <= final; x += 0.1) {
+                xValues.push(x);
+                yValues.push(eval(exp));
+            }
+            // Display using Plotly
+            const grafica = {
+                x:xValues,
+                y:yValues,
+                mode:"lines",
+                marker: {color:"rgb(220,66,69)"}
+            }
+            const data = [grafica];
+            const layout = {title: "y = " + exp};
+            Plotly.newPlot("myPlot", data, layout);
+        }else{
+            document.getElementById("myPlot").innerHTML = "Valores inválidos";
+        }
+
+    }
+</script>
+</body>
+</html>

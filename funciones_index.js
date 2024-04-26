@@ -11,6 +11,7 @@ const botones=document.querySelectorAll(".button");
 const nav_btn = document.querySelectorAll("#boton-nav ul li");
 const botonMenu=document.querySelectorAll(".boton-menu img");
 
+
 function transicion(){
     for(let i=0; secciones.length;i++){
         secciones[i].style.height = altura;
@@ -295,7 +296,6 @@ function sites(){
 function canva(){
     document.getElementsByName("practicas")[0].src = "media_index/sabaton_canva.html";
 }
-
 function check(){
     const navbar= document.getElementById("selector");
     if(nav===true){

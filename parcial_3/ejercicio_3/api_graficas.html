@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Gráficas</title>
+</head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+    <div id="Parcial1" style="width:100%;max-width:700px"></div>
+    <script>
+        const materias = ["Fisica I", "Matematicas I", "Programacion I", "CNG II", "Programacion Web I","Quimica", "Probabilidad y Estadistica"];
+        const calif1 = [9.00, 10.0, 9.50, 9.50, 9.50, 8.00, 10.0];
+        const calif2 = [9.00, 10.0, 9.50, 9.50, 9.00, 7.50, 10.0];
+        const calif3 = [Math.round((Math.random()*5+5)*100)/100,Math.round((Math.random()*5+5)*100)/100,Math.round((Math.random()*5+5)*100)/100,Math.round((Math.random()*5+5)*100)/100,Math.round((Math.random()*5+5)*100)/100,Math.round((Math.random()*5+5)*100)/100,Math.round((Math.random()*5+5)*100)/100];
+
+        const Parcial1 = {
+            x:materias,
+            y:calif1,
+            type:"bar",
+            orientation:"v",
+            marker: {color:"rgba(0,0,255,0.6)"}
+        };
+
+        const Parcial2 = {
+            x:materias,
+            y:calif2,
+            type:"bar",
+            orientation:"v",
+            marker: {color:"rgba(255,0,0,0.6)"}
+        };
+
+        const Parcial3 = {
+            x:materias,
+            y:calif3,
+            type:"bar",
+            orientation:"v",
+            marker: {color:"rgba(64,255,0,0.6)"}
+        };
+
+        const data = [Parcial1,Parcial2, Parcial3];
+
+        const layout = {title:"Calificaciones",barmode:'group'};
+        Plotly.newPlot("Parcial1", data, layout);
+    </script>
+
+</body>
+</html>

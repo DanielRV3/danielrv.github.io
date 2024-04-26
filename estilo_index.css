@@ -283,7 +283,6 @@ iframe{
         font-size: clamp(1rem, 2.5vw, 1.5rem);
     }
     #boton-nav li{
-        /*flex-shrink: 1;*/
         flex-basis: 7vh;
         width: 100%;
         margin: 2vh 0;

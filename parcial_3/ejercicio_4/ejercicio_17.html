@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px; color: #5ebec9"></canvas>
+
+<script>
+    const xValues = ["Fisica I", "Matematicas I", "Programacion I", "CNG II", "Programacion Web I","Quimica", "Probabilidad y Estadistica"];
+    const yValues = [calif(),calif(),calif(),calif(),calif(),calif(),calif(),0];
+    const barColors = ["#ff6201", "#de2020","#955fef","#ffdd00","#5ebec9","#a0ef5f","#2d6203"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Calificaciones Parcial 2"
+            }
+        }
+    });
+
+    function calif(){
+        return Math.round((Math.random()*5+5)*100)/100;
+    }
+</script>
+
+</body>
+</html>

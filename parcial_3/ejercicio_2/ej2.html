@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body onscroll="myMap();">
+    <h1>My First Google Map</h1>
+    <div id="map" style="width:400px;height:400px;background:yellow"></div>
+    <script>
+        function myMap() {
+            let mapOptions = {
+                center: new google.maps.LatLng(22.1162471, -100.9920162),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            let map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+</body>
+</html>
