@@ -37,9 +37,10 @@
 <div style="display: flex;width: 100vw">
     <canvas id="myCanvas" width="500" height="500" style=""></canvas>
     <form action="javascript:void(0)" id="oal">
-        <label for="guess"> <h3>Letra</h3> <input type="text" id="guess" name="guess" style="height: 2rem;" onkeyup="buscar();"></label>
-        <br><br><input type="reset">
+        <label for="guess"> <h3>Letra</h3> <input type="text" id="guess" name="guess" style="height: 2rem;"></label>
+        <br><br>
     </form>
+    <button id="resetear" style="display: none;width: 100px;height: fit-content" onclick="resetear()">Reestablecer</button>
 </div>
 <div id="palabra" style="width: 100vw; display: flex"></div>
 <div id="condicion"></div>
@@ -52,30 +53,32 @@
         "demonio","angel","tractor","guerra","alarma","gritar","manubrio",
         "mascara","moda","regalo","bicicleta","hielo","salvaje","gobierno",
         "azotea","idioma","baile","oficina","documento","secreto","hermano",
-        "capturar","sello","liberar","roca","tumba","marte","abrelatas"];
+        "capturar","sello","liberar","roca","tumba","marte","abrelatas",
+        "murcielago"];
     let random=Math.floor(Math.random()*palabras.length);
     let errores=0;
     let aciertos=0;
+
     function juego(){
 
         for (let i = 0; i < palabras[random].length; i++) {
             let div = document.createElement('div');
             div.setAttribute('class', 'letras');
-            //div.textContent = palabras[random][i];
             document.getElementById("palabra").appendChild(div);
         }
-
 
     }
     function buscar(){
         let encontrar=false;
-        let letra = document.getElementById("oal").guess.value;
-        document.getElementById("condicion").innerHTML=letra;
-        if(errores<7 && aciertos!==palabras[random].length && letra!=="Enter"){
+        let letra = document.getElementById("oal").guess.value.toLowerCase();
+
+       document.getElementById("condicion").innerHTML=letra;
+
+        if(errores<7 && aciertos!==palabras[random].length){
             for(let i=0; i<palabras[random].length; i++){
                 if(palabras[random][i]===letra){
                     encontrar=true;
-                    document.getElementsByClassName("letras")[i].innerHTML=palabras[random][i];
+                   document.getElementsByClassName("letras")[i].innerHTML=palabras[random][i];
                     aciertos++;
                 }
             }
@@ -86,13 +89,13 @@
                         cabeza();
                         break;
                     case 2:
-                        cuerpo();
+                        manoIzquierda();
                         break;
                     case 3:
                         manoDerecha();
                         break;
                     case 4:
-                        manoIzquierda();
+                        cuerpo();
                         break;
                     case 5:
                         pieDerecho();
@@ -106,14 +109,34 @@
                 }
             }
         }if(errores>=7){
-            document.getElementById("condicion").innerHTML="¡Perdiste!";
+            document.getElementById("condicion").innerHTML="¡Perdiste! La palabra era: "+palabras[random];
             document.getElementById("condicion").style.color="red";
+            document.getElementById("resetear").style.display="block";
         }
         if(aciertos===palabras[random].length){
             document.getElementById("condicion").innerHTML="¡Ganaste!";
             document.getElementById("condicion").style.color="green";
+            document.getElementById("resetear").style.display="block";
         }
-        document.getElementById("oal").reset();
+    }
+    function resetear(){
+        const divs = document.getElementsByClassName("letras");
+        document.getElementById("condicion").innerHTML="";
+        document.getElementById("condicion").style.color="black";
+        ctx.beginPath();
+        ctx.fillStyle = "white";
+        ctx.fillRect(165, 90, 300, 350);
+        ctx.stroke();
+        horca();
+        document.getElementById("resetear").style.display="none";
+        errores=0; aciertos=0;
+
+        //funcion para destruir los divs
+        while (divs.length>0) {
+            divs[0].parentNode.removeChild(divs[0]);
+        }
+        random=Math.floor(Math.random()*palabras.length);
+        juego();
     }
     function horca(){
         ctx.beginPath();
@@ -175,25 +198,23 @@
     function manoDerecha(){
         ctx.beginPath();
         ctx.lineWidth = 4;
-        ctx.moveTo(250, 240);
-        ctx.lineTo(330, 210);
+        ctx.moveTo(250, 200);
+        ctx.lineTo(330, 240);
         ctx.stroke();
     }
     function manoIzquierda(){
         ctx.beginPath();
         ctx.lineWidth = 4;
-        ctx.moveTo(250, 240);
-        ctx.lineTo(170, 210);
+        ctx.moveTo(250, 200);
+        ctx.lineTo(170, 240);
         ctx.stroke();
     }
 
-    /*cabeza();
-    cuerpo();
-    manoDerecha();
-    manoIzquierda();
-    pieDerecho();
-    pieIzquierdo();*/
-    //cara();
+    document.getElementById("guess").addEventListener('keyup', (event) => {
+        if (event.key>='a' && event.key<='z') {
+            buscar();
+        }
+    });
 </script>
 </body>
 </html>
