@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Canvas</title>
+    <title>Ahorcado</title>
     <style>
         body{
             font-family: Verdana,sans-serif;
@@ -36,7 +36,7 @@
 
 <div style="display: flex;width: 100vw">
     <canvas id="myCanvas" width="500" height="500" style=""></canvas>
-    <form action="javascript:void(0)" id="oal">
+    <form id="oal">
         <label for="guess"> <h3>Letra</h3> <input type="text" id="guess" name="guess" style="height: 2rem;"></label>
         <br><br>
     </form>
@@ -58,31 +58,31 @@
     let random=Math.floor(Math.random()*palabras.length);
     let errores=0;
     let aciertos=0;
+    let check = "";
 
     function juego(){
-
         for (let i = 0; i < palabras[random].length; i++) {
             let div = document.createElement('div');
             div.setAttribute('class', 'letras');
             document.getElementById("palabra").appendChild(div);
         }
-
     }
     function buscar(){
         let encontrar=false;
         let letra = document.getElementById("oal").guess.value.toLowerCase();
 
-       document.getElementById("condicion").innerHTML=letra;
+        document.getElementById("condicion").innerHTML=letra;
 
         if(errores<7 && aciertos!==palabras[random].length){
             for(let i=0; i<palabras[random].length; i++){
-                if(palabras[random][i]===letra){
+                if(palabras[random][i]===letra && !check.includes(letra)){
                     encontrar=true;
-                   document.getElementsByClassName("letras")[i].innerHTML=palabras[random][i];
+                    check= check+letra;
+                    document.getElementsByClassName("letras")[i].innerHTML=palabras[random][i];
                     aciertos++;
                 }
             }
-            if(!encontrar) {
+            if(!encontrar && !check.includes(letra)) {
                 errores++;
                 switch (errores){
                     case 1:
@@ -129,7 +129,7 @@
         ctx.stroke();
         horca();
         document.getElementById("resetear").style.display="none";
-        errores=0; aciertos=0;
+        errores=0; aciertos=0;check="";
 
         //funcion para destruir los divs
         while (divs.length>0) {
@@ -214,6 +214,7 @@
         if (event.key>='a' && event.key<='z') {
             buscar();
         }
+        document.forms[0].reset();
     });
 </script>
 </body>
