@@ -6,10 +6,10 @@ let btncel = false;
 const subtitulos= document.querySelectorAll(".subtitulo");
 const secciones = document.querySelectorAll(".contenido");
 const iframes =document.querySelectorAll("iframe");
-const menus = document.querySelectorAll(".semana1");
+const menus = document.querySelectorAll(".menu");
 const botones=document.querySelectorAll(".button");
 const nav_btn = document.querySelectorAll("#boton-nav ul li");
-const botonMenu=document.querySelectorAll(".boton-semana1 img");
+const botonMenu=document.querySelectorAll(".boton-menu img");
 
 
 function transicion(){
@@ -31,9 +31,9 @@ function reset2(){
     iframes[2].src = "parcial_2/practica_9/siete_barrios.html";
 }
 function reset3(){
-    iframes[0].src = "media_index/construccion.html";
-    iframes[1].src = "media_index/construccion.html";
-    iframes[2].src = "media_index/construccion.html";
+    iframes[0].src = "parcial_3/menu-semana1.html";
+    iframes[1].src = "parcial_3/semana2/retos/reto2.html";
+    iframes[2].src = "parcial_3/semana3/ahorcado.html";
 }
 function parcial1(){
     document.body.style.backgroundColor = "rgba(137,163,255,0.65)"
@@ -176,7 +176,7 @@ function mostrar(seccion) {
         iframes[seccion].style.width = "70vw";
         menuParcial.style.width = "25vw";
     }
-    //document.getElementsByClassName("semana1")[x].style.padding = "1%";
+    //document.getElementsByClassName("menu")[x].style.padding = "1%";
     for(let i=0; i<botonesSeccion.length;i++){
         botonesSeccion[i].style.color = "whitesmoke";
         botonesSeccion[i].style.transitionDelay = "0.3s";
@@ -192,7 +192,7 @@ function ocultar(seccion) {
 
     iframes[seccion].style.width = "95vw";
     menuParcial.style.width = "0";
-    //document.getElementsByClassName("semana1")[x].style.padding ="1% 0 1% 0";
+    //document.getElementsByClassName("menu")[x].style.padding ="1% 0 1% 0";
     for(let i=0; i<botonesSeccion.length;i++){
         botonesSeccion[i].style.color = "transparent";
         botonesSeccion[i].style.transitionDelay = "0s";
