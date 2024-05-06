@@ -39,7 +39,6 @@ function parcial1(){
     document.body.style.backgroundColor = "rgba(137,163,255,0.65)"
     document.body.style.height = "200vh";
 
-    const navbar= document.getElementById("selector");
     if(document.body.offsetWidth <=860){
         btncel=false;
         document.getElementById("selector").style.transition="height 0s, width 0.4s";document.getElementById("selector").style.transition="height 0s, width 0.4s";
@@ -83,7 +82,6 @@ function parcial2(){
     document.body.style.backgroundColor = "rgba(172,255,166,0.65)";
     document.body.style.height = "200vh";
 
-    const navbar= document.getElementById("selector");
     if(document.body.offsetWidth <=860){
         btncel=false;
         document.getElementById("selector").style.transition="height 0s, width 0.4s";
@@ -128,7 +126,6 @@ function parcial3(){
     document.body.style.backgroundColor = "rgba(255,136,107,0.65)";
     document.body.style.height = "200vh";
     //document.body.style.overflow = "hidden";
-    const navbar= document.getElementById("selector");
     if(document.body.offsetWidth <=860){
         btncel=false;
         document.getElementById("selector").style.transition="height 0s, width 0.4s";
