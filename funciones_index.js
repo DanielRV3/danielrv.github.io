@@ -6,10 +6,10 @@ let btncel = false;
 const subtitulos= document.querySelectorAll(".subtitulo");
 const secciones = document.querySelectorAll(".contenido");
 const iframes =document.querySelectorAll("iframe");
-const menus = document.querySelectorAll(".menu");
+const menus = document.querySelectorAll(".semana1");
 const botones=document.querySelectorAll(".button");
 const nav_btn = document.querySelectorAll("#boton-nav ul li");
-const botonMenu=document.querySelectorAll(".boton-menu img");
+const botonMenu=document.querySelectorAll(".boton-semana1 img");
 
 
 function transicion(){
@@ -39,7 +39,6 @@ function parcial1(){
     document.body.style.backgroundColor = "rgba(137,163,255,0.65)"
     document.body.style.height = "200vh";
 
-    const navbar= document.getElementById("selector");
     if(document.body.offsetWidth <=860){
         btncel=false;
         document.getElementById("selector").style.transition="height 0s, width 0.4s";document.getElementById("selector").style.transition="height 0s, width 0.4s";
@@ -83,7 +82,6 @@ function parcial2(){
     document.body.style.backgroundColor = "rgba(172,255,166,0.65)";
     document.body.style.height = "200vh";
 
-    const navbar= document.getElementById("selector");
     if(document.body.offsetWidth <=860){
         btncel=false;
         document.getElementById("selector").style.transition="height 0s, width 0.4s";
@@ -128,7 +126,6 @@ function parcial3(){
     document.body.style.backgroundColor = "rgba(255,136,107,0.65)";
     document.body.style.height = "200vh";
     //document.body.style.overflow = "hidden";
-    const navbar= document.getElementById("selector");
     if(document.body.offsetWidth <=860){
         btncel=false;
         document.getElementById("selector").style.transition="height 0s, width 0.4s";
@@ -179,7 +176,7 @@ function mostrar(seccion) {
         iframes[seccion].style.width = "70vw";
         menuParcial.style.width = "25vw";
     }
-    //document.getElementsByClassName("menu")[x].style.padding = "1%";
+    //document.getElementsByClassName("semana1")[x].style.padding = "1%";
     for(let i=0; i<botonesSeccion.length;i++){
         botonesSeccion[i].style.color = "whitesmoke";
         botonesSeccion[i].style.transitionDelay = "0.3s";
@@ -195,7 +192,7 @@ function ocultar(seccion) {
 
     iframes[seccion].style.width = "95vw";
     menuParcial.style.width = "0";
-    //document.getElementsByClassName("menu")[x].style.padding ="1% 0 1% 0";
+    //document.getElementsByClassName("semana1")[x].style.padding ="1% 0 1% 0";
     for(let i=0; i<botonesSeccion.length;i++){
         botonesSeccion[i].style.color = "transparent";
         botonesSeccion[i].style.transitionDelay = "0s";
