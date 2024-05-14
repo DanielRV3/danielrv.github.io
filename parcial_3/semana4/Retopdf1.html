@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="../jspdf.js"></script>
+
+    <script type="text/javascript" src="../jspdf.plugin.addimage.js"></script>
+
+    <script type="text/javascript" src="../jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="../jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="../jspdf.plugin.from_html.js"></script>
+    <title>Reto PDF 1</title>
+</head>
+<body>
+<iframe width="500" height="400"></iframe>
+<script>
+    let caracter = prompt('Escribe un caracter');
+    let filas = prompt('Escribe el numero de filas:');
+    filas = parseInt(filas);
+
+    const doc = new jsPDF();
+    doc.setFontSize(22);
+    doc.text(20, 20, 'Pirámide 1');
+    doc.setFontSize(20);
+    for(let i = 1; i <= filas; i ++) {
+        for (let j = 1; j <= i; j++) {
+            doc.text(18+(j*2), 30 + (i * 4), caracter);
+        }
+    }
+    let string = doc.output('datauristring');
+
+    $('iframe').attr('src', string);
+
+</script>
+</body>
+</html>

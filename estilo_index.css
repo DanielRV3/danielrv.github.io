@@ -90,7 +90,7 @@ iframe{
     align-self: center;
     height: 90%;
     background-color: #eaeeff;
-    overflow: hidden;
+    /*overflow: hidden;*/
     border-radius: 7px;
 }
 

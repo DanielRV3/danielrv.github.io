@@ -2,16 +2,28 @@
 <head>
     <title>Bienvenida del usuario</title>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="../jspdf.js"></script>
+
+    <script type="text/javascript" src="../jspdf.plugin.addimage.js"></script>
+
+    <script type="text/javascript" src="../jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="../jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="../jspdf.plugin.from_html.js"></script>
 </head>
 <body>
 	<h2>TEST PARA MEDIR EL NIVEL DE RIESGO DE VIOLENCIA PARA MUJERES EN EL ESTADO DE SLP</h2>
   <p>INSTRUCCIONES: Lee cuidadosamente y responde una sola opción</p>
 <form id="myform" onsubmit="return resultados();" action="javascript:void(0)">
+    <input type="text" name="nombre" id="nombre"> <br>
 	1.- Dentro de tu núcleo familiar (padre, madre, hermanos) en algún momento vivieron violencia
 (amenazas, gritos, golpes)? <br>
 SI<input id="p1" name="p1" type="radio"  value=3>
@@ -140,22 +152,13 @@ RARA VEZ<input id="p21"  name="p21" type="radio" value=1>
 NO<input id="p21"  name="p21" type="radio" value=0 checked>
 <br><br>
 <input type="submit" class="btn btn-primary" ></p>
-    <p id="demo">
-
-    </p>
+    <iframe id="demo" width="500" height="400"></iframe>
 </form>
     <script type = "text/javascript">
         function resultados() {
-            /*/INDICE DE VIOLENCIA FEMINICIDA
-            0-12 FASE DE APERTURA
-            13-24 FASE DE DOMINIO
-            25-36 FASE DE DEMOSTRACION
-            37-48 FASE DE RECONOCIMIENTO
-            49-60 FASE DE RIESGO INMINENTE
-            61    CONSUMACION
-            */
             let indice=0;
             let fase="";
+            let nombre=document.forms[0].nombre.value;
             for (let i = 1; i <= 21; i++) {
                 let char ="p"+i;
                 indice+=parseInt(document.forms[0][char].value);
@@ -168,8 +171,28 @@ NO<input id="p21"  name="p21" type="radio" value=0 checked>
             if(indice>=49 && indice<=60) fase="riesgo inminente";
             if(indice>60) fase="consumación";
 
-            document.getElementById("demo").innerHTML="Total de puntos: "+ Math.floor(indice) + " y estás en fase de "+ fase;
+            generarPDF(indice, fase, nombre)
             return true;
+        }
+        function generarPDF(indice, fase, nombre){
+            $(document).ready(function() {
+                const doc = new jsPDF();
+
+                doc.setFontSize(15);
+                doc.text(10, 20, "TEST PARA MEDIR EL NIVEL DE RIESGO DE VIOLENCIA PARA MUJERES");
+                doc.text(80, 30, "EN EL ESTADO DE SLP");
+                doc.text(20, 75, "Nombre: "+nombre);
+                doc.text(20, 80, "Según los resultados del test se encuentra en la fase de "+fase+",");
+                doc.text(20, 85, "con una puntuación de "+ indice+".");
+
+
+                //doc.addImage(imgData, 'JPEG', 10, 40, 180, 180);
+
+                let string = doc.output('datauristring');
+
+                $('iframe').attr('src', string);
+
+            });
         }
     </script>
 
