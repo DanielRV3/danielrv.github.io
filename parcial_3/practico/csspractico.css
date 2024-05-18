@@ -1,0 +1,9 @@
+#boxes{
+    display: flex;
+}
+#cantidad{
+    margin: 5vh 5px;
+}
+.box{
+    width: 50px;
+}
