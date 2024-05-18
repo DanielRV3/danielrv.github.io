@@ -1,3 +1,6 @@
+.container-fluid{
+    background-color: #e5956c;
+}
 #boxes{
     display: flex;
 }
@@ -6,4 +9,25 @@
 }
 .box{
     width: 50px;
+
+    border-radius: 5px;
+    border: 1px solid #e6d4ad;
+}
+#output{
+    font-size: 1.5rem;
+}
+.form-control{
+    border: #c94f0f solid 3px;
+    width: 50px;
+}
+#cant{
+    width: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #e6d4ad;
+}
+.form-1{
+    padding: 0 5px;
+    border-radius: 8px;
+    border: solid 4px #d96b2a;
 }

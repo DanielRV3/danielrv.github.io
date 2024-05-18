@@ -30,6 +30,7 @@
             doc.text(18+(filas+i)-(j*2), 30 + (i * 4), caracter);
         }
     }
+    doc.save('Codificacion');
     let string = doc.output('datauristring');
 
     $('iframe').attr('src', string);
